@@ -1,0 +1,66 @@
+Connexion a la BDD
+
+$base = new PDO('mysql:host=localhost; dbname=cinemet1', 'amin', 'asw123');
+
+try{
+
+}
+catch{
+
+}
+
+AJOUTER
+INSERT INTO `genre` (`idgenre`, `description`) VALUES (NULL, 'Action'), NULL, 'Comedie'),  (NULL, 'Science');
+
+Exemple avec GENRE:
+------------------------------
+INSERT INTO `genre` (` `description`) VALUES ( '".$_POST['descr']."');
+
+AFFICHER TOUT
+------------------------
+SELECT * FROM genre;
+
+AFFICHER UN
+------------------------
+SELECT * FROM genre WHERE idgenre=1;
+
+
+
+---------------------------
+FORMULAIRE (Ajout) ---> ajout.html
+-------------------
+<form action="resultat.php" method="POST">
+<label for="descr">Description genre</label>
+<input type="text" name="descr">
+
+<input type="submit" name="envoyer" value="Envoyer">
+<input type="reset" name="effacer" value="Effacer">
+</form>
+
+
+
+Fichier (pour affichage du Resultat) --->resultat.php
+-------------------------
+la connexion 
+<?php include ('connexion.php');
+INSERT INTO `genre` (` `description`) VALUES ( '".$_POST['descr']."');
+
+if(){
+ echo "Enregistré !";
+}
+else{
+	echo "PAS Enregistré !";
+}
+
+
+$base=null;
+
+
+
+======================================
+AJOUT FILMS
+-------------------
+INSERT INTO `films` (`idfilms`, `titre`, `duree`, `infos`, `images`, `videos`, `idgenre`, `idfilms_appartenance`, `idfilms_relact`, `idacteur`, `idfilms_relreal`, `idrealisateur`, `idgenre_appartenance`, `idacteur_relact`, `idrealisateur_relreal`) 
+VALUES (NULL, '10', '1:15:00', '10', '10', '10', '', '', '', '', '', '', '', '', '')
+
+
